@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_image/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/glm/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake",
+		"/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
