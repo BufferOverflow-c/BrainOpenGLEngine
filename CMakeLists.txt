@@ -9,7 +9,7 @@ if(MSVC)
     add_compile_options(/arch:AVX2)
 endif()
 
-project(mygame)
+project(Brain)
 
 # Disable unnecessary GLFW components
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
@@ -24,7 +24,7 @@ add_subdirectory(thirdparty/stb_image)
 add_subdirectory(thirdparty/stb_truetype)
 add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/imgui-docking)
-add_subdirectory(thirdparty/gl2d)
+#add_subdirectory(thirdparty/gl2d)
 
 # Add GLAD manually as static library
 add_library(glad STATIC
@@ -69,7 +69,7 @@ target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE
     glad
     stb_image
     stb_truetype
-    gl2d
+    #gl2d
     imgui
 )
 
