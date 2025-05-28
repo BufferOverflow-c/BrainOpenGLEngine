@@ -61,6 +61,7 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glfw-3.3.2/include")
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking")
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/gl2d/include")
+target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/stb_image/include/stb_image")
 
 # Link libraries, including GLAD
 target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE
@@ -69,7 +70,6 @@ target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE
     glad
     stb_image
     stb_truetype
-    #gl2d
     imgui
 )
 
@@ -86,3 +86,38 @@ endif()
 if(MSVC)
     target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC _CRT_SECURE_NO_WARNINGS)
 endif()
+
+# Shader Compilation
+find_program(GLSL_VALIDATOR glslangValidator HINTS
+  ${Vulkan_GLSLANG_VALIDATOR_EXECUTABLE}
+  /usr/bin
+  /usr/local/bin
+  ${VULKAN_SDK_PATH}/Bin
+  ${VULKAN_SDK_PATH}/Bin32
+  $ENV{VULKAN_SDK}/Bin/
+  $ENV{VULKAN_SDK}/Bin32/
+)
+
+file(GLOB_RECURSE GLSL_SOURCE_FILES
+  "${PROJECT_SOURCE_DIR}/shaders/*.frag"
+  "${PROJECT_SOURCE_DIR}/shaders/*.vert"
+)
+
+foreach(GLSL ${GLSL_SOURCE_FILES})
+    get_filename_component(FILE_NAME ${GLSL} NAME)
+    list(APPEND GLSL_BINARY_FILES ${GLSL})
+endforeach()
+
+add_custom_target(Shaders DEPENDS ${GLSL_BINARY_FILES})
+
+#foreach(GLSL ${GLSL_SOURCE_FILES})
+#  get_filename_component(FILE_NAME ${GLSL} NAME)
+#  set(SPIRV "${PROJECT_SOURCE_DIR}/shaders/${FILE_NAME}.spv")
+#  add_custom_command(
+#    OUTPUT ${SPIRV}
+#    COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}
+#    DEPENDS ${GLSL})
+#  list(APPEND SPIRV_BINARY_FILES ${SPIRV})
+#endforeach()
+
+#add_custom_target(Shaders DEPENDS ${SPIRV_BINARY_FILES})
