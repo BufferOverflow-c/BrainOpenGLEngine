@@ -1,6 +1,7 @@
 #pragma once
 
 #include "brain_window.hpp"
+#include "brain_camera.hpp"
 
 // thirdparty
 #include <glm/glm.hpp>
@@ -27,5 +28,6 @@ private:
     //BrnRenderer brnRenderer{brnWindow, brnDevice};
 };
 }
+    //BrainCamera(const glm::mat4 projectionMatrix, const glm::mat4 viewTranslation);
 
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 
 # Production build option
 option(PRODUCTION_BUILD "Make this a production build" OFF)
@@ -9,7 +9,7 @@ if(MSVC)
     add_compile_options(/arch:AVX2)
 endif()
 
-project(Brain)
+project(BrainCards)
 
 # Disable unnecessary GLFW components
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
@@ -43,7 +43,7 @@ file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/
 add_executable("${CMAKE_PROJECT_NAME}" ${MY_SOURCES})
 
 # Set C++ standard
-set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
+set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 23)
 
 # Define preprocessor macros
 target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC GLFW_INCLUDE_NONE=1)
