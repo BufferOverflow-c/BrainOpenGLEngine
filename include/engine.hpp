@@ -1,6 +1,8 @@
 #pragma once
 
 #include "brain_window.hpp"
+#include "brain_camera.hpp"
+#include "keyboardcontroller.hpp"
 
 // thirdparty
 #include <glm/glm.hpp>
@@ -21,10 +23,12 @@ public:
     void run();
 
 private:
+    float deltaTime{0.f};
+    float lastFrame{0.f};
     void loadGameObjects();
     void fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth);
     BrainWindow window{WIDTH, HEIGHT, "Brain Engine"};
-    //BrnRenderer brnRenderer{brnWindow, brnDevice};
+    KeyboardController controller{};
 };
 }
 

@@ -1,5 +1,6 @@
-cmake_minimum_required(VERSION 3.16)
-set(CMAKE_CXX_STANDARD 17)
+cmake_minimum_required(VERSION 3.0)
+cmake_policy(VERSION 3.0)
+set(CMAKE_CXX_STANDARD 23)
 
 # Production build option
 option(PRODUCTION_BUILD "Make this a production build" OFF)
@@ -43,7 +44,7 @@ file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/
 add_executable("${CMAKE_PROJECT_NAME}" ${MY_SOURCES})
 
 # Set C++ standard
-set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
+set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 23)
 
 # Define preprocessor macros
 target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC GLFW_INCLUDE_NONE=1)
@@ -109,15 +110,3 @@ foreach(GLSL ${GLSL_SOURCE_FILES})
 endforeach()
 
 add_custom_target(Shaders DEPENDS ${GLSL_BINARY_FILES})
-
-#foreach(GLSL ${GLSL_SOURCE_FILES})
-#  get_filename_component(FILE_NAME ${GLSL} NAME)
-#  set(SPIRV "${PROJECT_SOURCE_DIR}/shaders/${FILE_NAME}.spv")
-#  add_custom_command(
-#    OUTPUT ${SPIRV}
-#    COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}
-#    DEPENDS ${GLSL})
-#  list(APPEND SPIRV_BINARY_FILES ${SPIRV})
-#endforeach()
-
-#add_custom_target(Shaders DEPENDS ${SPIRV_BINARY_FILES})
