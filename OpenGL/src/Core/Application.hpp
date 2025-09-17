@@ -24,7 +24,7 @@ public:
     };
 
     Application();
-    ~Application();
+    ~Application() = default;
 
     //~ Delete copy constructors
     Application(const Application &) = delete;
@@ -32,27 +32,21 @@ public:
 
     void run();
 
-    // callbacks
-    //static void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
-    //static void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
-
 #pragma region variables
     static constexpr int WIDTH{800};
     static constexpr int HEIGHT{600};
-    //static float lastX;
-    //static float lastY;
-    static bool firstMouse;
     float currentFrame{};
     float deltaTime{};
     float lastFrame{};
 #pragma endregion variables
 private:
+
+
     KeyMappings keys{};
     void loadGameObjects();
     void processInput(const float deltaTime);
     //void fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth);
-    BrainWindow window{WIDTH, HEIGHT, "Brain Engine"};
-    BrainCamera camera {window.getGLFWwindow(), glm::vec3(0.f, 0.f, 3.f)};
+    Window window{WIDTH, HEIGHT, "Brain Engine"};
 };
 }
 

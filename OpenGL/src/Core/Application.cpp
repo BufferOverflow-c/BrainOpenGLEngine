@@ -17,18 +17,15 @@
 using namespace BrainOpenGL;
 
 Application::Application() {
-    static bool firstMouse = true;
     loadGameObjects();
 }
-
-Application::~Application() = default;
 
 void Application::run() {
     Shader shader("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.vert", "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.frag");
     glEnable(GL_DEPTH_TEST);
 
     // frame timing
-    currentFrame = glfwGetTime();
+    currentFrame = static_cast<float>(glfwGetTime());
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
 
@@ -166,8 +163,6 @@ void Application::run() {
     shader.setInt("texture2", 1);
     shader.setFloat("textureOpacity", 0.2);
 #pragma endregion shader
-    //glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
-    //glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
     glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     while(!window.shouldClose()) {
         processInput(deltaTime);
@@ -232,27 +227,6 @@ void Application::processInput(const float deltaTime) {
     if (glfwGetKey(window.getGLFWwindow(), keys.moveRight) == GLFW_PRESS) camera.processKeyboardInput(RIGHT, deltaTime);
 }
 
-//void Application::mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput) {
-//    const float xPos = static_cast<float>(xPosInput);
-//    const float yPos = static_cast<float>(yPosInput);
-//
-//    if (firstMouse) {
-//        lastX = xPos;
-//        lastY = yPos;
-//        firstMouse = false;
-//    }
-//
-//    const float xOffset = xPos - lastX;
-//    const float yOffset = lastY - yPos;
-//    lastX = xPos;
-//    lastY = yPos;
-//
-//    camera.processMouseMovement(xOffset, yOffset);
-//}
-//
-//void Application::scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
-//    camera.processMouseScroll(static_cast<float>(yOffset));
-//}
 /*
 void Application::fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth) {
     if(depth < 0) { return; }
