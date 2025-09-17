@@ -1,0 +1,265 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "thirdparty/glfw-3.3.2",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-thirdparty.glfw-3.3.2-Debug-3aa550bfce25c585398c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "thirdparty/glfw-3.3.2"
+				},
+				{
+					"build" : "thirdparty/glfw-3.3.2/src",
+					"jsonFile" : "directory-thirdparty.glfw-3.3.2.src-Debug-99bf303ff047661d0eb6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "thirdparty/glfw-3.3.2/src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "thirdparty/stb_image",
+					"jsonFile" : "directory-thirdparty.stb_image-Debug-f5d1505268430df3b8bd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "thirdparty/stb_image",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "thirdparty/stb_truetype",
+					"jsonFile" : "directory-thirdparty.stb_truetype-Debug-424070bdf04d8a54cb5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "thirdparty/stb_truetype",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "thirdparty/glm",
+					"jsonFile" : "directory-thirdparty.glm-Debug-15b450b1ecfe2ebf14a6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "thirdparty/glm"
+				},
+				{
+					"build" : "thirdparty/imgui-docking",
+					"jsonFile" : "directory-thirdparty.imgui-docking-Debug-0022dff26e94363a74b8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "thirdparty/imgui-docking",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Brain",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "stb_image",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "stb_truetype",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "imgui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Brain::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Brain-Debug-3e097127de13145c3864.json",
+					"name" : "Brain",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Shaders::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Shaders-Debug-caa819870cb3ef70026b.json",
+					"name" : "Shaders",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "glad::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glad-Debug-be209e22e3f92b25cd33.json",
+					"name" : "glad",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@c8db1781ba139d98a588",
+					"jsonFile" : "target-glfw-Debug-318ed7807f939e53f14c.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "imgui::@0e4bebfa6e0abb85058b",
+					"jsonFile" : "target-imgui-Debug-a4591be87771aee1ab71.json",
+					"name" : "imgui",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "stb_image::@203766a7419bd4cdeb21",
+					"jsonFile" : "target-stb_image-Debug-28d00645b5345bda4a62.json",
+					"name" : "stb_image",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "stb_truetype::@5402ffb4a20a82b7e45d",
+					"jsonFile" : "target-stb_truetype-Debug-4ddd3ae4659de3e7e9bd.json",
+					"name" : "stb_truetype",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/cmake-build-debug",
+		"source" : "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
