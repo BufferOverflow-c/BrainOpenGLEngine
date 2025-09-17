@@ -1,11 +1,12 @@
-#include "engine.hpp"
-#include "shader.hpp"
+#include "OpenGL/Core/engine.hpp"
+#include "../Renderer/Shader.hpp"
 
 // thirdparty
 #include <OpenGL/gl.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <GLFW/glfw3.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -13,22 +14,27 @@
 // STD
 #include <iostream>
 
-using namespace Brain;
+using namespace BrainOpenGL;
 
 Engine::Engine() {
+    lastX = WIDTH / 2.f;
+    static float lastY = HEIGHT / 2.f;
+    static bool firstMouse = true;
     loadGameObjects();
 }
 
-Engine::~Engine() {}
+Engine::~Engine() = default;
 
 void Engine::run() {
-    Shader shader("../shaders/simple_shader.vert", "../shaders/simple_shader.frag");
+    Shader shader("../Shaders/simple_shader.vert", "../Shaders/simple_shader.frag");
     glEnable(GL_DEPTH_TEST);
 
     // frame timing
-    deltaTime = 0.f;
-    lastFrame = 0.f;
+    currentFrame = glfwGetTime();
+    deltaTime = currentFrame - lastFrame;
+    lastFrame = currentFrame;
 
+#pragma region vertex attributes
     float vertices[] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
          0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
@@ -90,7 +96,8 @@ void Engine::run() {
     unsigned int indices[] = {   // note start at 0
         0, 1, 2,
     };
-
+#pragma endregion vertex attributes
+#pragma region buffers
     unsigned int VAO, VBO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -114,7 +121,8 @@ void Engine::run() {
     glEnableVertexAttribArray(2);
     // wireframes
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
+#pragma endregion buffers
+#pragma region texture
     // texture generation process
     unsigned int texture1, texture2;
     int width, height, nrChannels;
@@ -128,7 +136,7 @@ void Engine::run() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     stbi_set_flip_vertically_on_load(true);
-    data = stbi_load(std::filesystem::path("../resources/container.jpg").c_str(), &width, &height, &nrChannels, 0);
+    data = stbi_load(std::filesystem::path("../Resources/container.jpg").c_str(), &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -144,7 +152,7 @@ void Engine::run() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    data = stbi_load(std::filesystem::path("../resources/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
+    data = stbi_load(std::filesystem::path("../Resources/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -152,15 +160,19 @@ void Engine::run() {
         std::println("Failed to load texture\n");
     }
     stbi_image_free(data);
-
+#pragma endregion texture
+#pragma region shader
     // set glUseProgram, as well as texture uniforms
     shader.use();
     shader.setInt("texture1", 0);
     shader.setInt("texture2", 1);
     shader.setFloat("textureOpacity", 0.2);
-
+#pragma endregion shader
+    glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
+    glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
+    glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     while(!window.shouldClose()) {
-        controller.processInput(window.getGLFWwindow(), deltaTime);
+        processInput(deltaTime);
 
         // render
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -204,7 +216,7 @@ void Engine::run() {
         glfwPollEvents();
     }
 
-    //optional: de-allocate resources once they've outlived their purpose
+    //optional: de-allocate Resources once they've outlived their purpose
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
@@ -212,6 +224,37 @@ void Engine::run() {
 
 void Engine::loadGameObjects() {}
 
+void Engine::processInput(const float deltaTime) {
+    if(glfwGetKey(window.getGLFWwindow(), keys.escape) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window.getGLFWwindow(), true);
+    }
+    if (glfwGetKey(window.getGLFWwindow(), keys.moveForward) == GLFW_PRESS) camera.processKeyboardInput(FORWARD, deltaTime);
+    if (glfwGetKey(window.getGLFWwindow(), keys.moveBackward) == GLFW_PRESS) camera.processKeyboardInput(BACKWARD, deltaTime);
+    if (glfwGetKey(window.getGLFWwindow(), keys.moveLeft) == GLFW_PRESS) camera.processKeyboardInput(LEFT, deltaTime);
+    if (glfwGetKey(window.getGLFWwindow(), keys.moveRight) == GLFW_PRESS) camera.processKeyboardInput(RIGHT, deltaTime);
+}
+
+void Engine::mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput) {
+    const float xPos = static_cast<float>(xPosInput);
+    const float yPos = static_cast<float>(yPosInput);
+
+    if (firstMouse) {
+        lastX = xPos;
+        lastY = yPos;
+        firstMouse = false;
+    }
+
+    const float xOffset = xPos - lastX;
+    const float yOffset = lastY - yPos;
+    lastX = xPos;
+    lastY = yPos;
+
+    camera.processMouseMovement(xOffset, yOffset);
+}
+
+void Engine::scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
+    camera.processMouseScroll(static_cast<float>(yOffset));
+}
 /*
 void Engine::fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth) {
     if(depth < 0) { return; }

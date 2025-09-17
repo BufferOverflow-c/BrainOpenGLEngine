@@ -205,7 +205,7 @@ typedef pthread_mutex_t mtx_t;
 */
 int mtx_init(mtx_t *mtx, int type);
 
-/** Release any resources used by the given mutex.
+/** Release any Resources used by the given mutex.
 * @param mtx A mutex object.
 */
 void mtx_destroy(mtx_t *mtx);
@@ -259,7 +259,7 @@ typedef pthread_cond_t cnd_t;
 */
 int cnd_init(cnd_t *cond);
 
-/** Release any resources used by the given condition variable.
+/** Release any Resources used by the given condition variable.
 * @param cond A condition variable object.
 */
 void cnd_destroy(cnd_t *cond);
@@ -416,7 +416,7 @@ typedef void (*tss_dtor_t)(void *val);
 int tss_create(tss_t *key, tss_dtor_t dtor);
 
 /** Delete a thread-specific storage.
-* The function releases any resources used by the given thread-specific
+* The function releases any Resources used by the given thread-specific
 * storage.
 * @param key The key that shall be deleted.
 */

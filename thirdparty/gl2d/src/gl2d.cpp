@@ -24,7 +24,7 @@
 // working at fixing get text size
 // 
 // 1.2.5
-// push pop shaders and camera
+// push pop Shaders and camera
 // added getViewRect
 // 
 // 1.2.6
@@ -60,7 +60,7 @@
 //	todo
 //
 //	add particle demo
-//	shaders demo
+//	Shaders demo
 //	add matrices transforms
 //	flags for vbos
 //	

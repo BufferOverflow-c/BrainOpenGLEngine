@@ -133,7 +133,7 @@ enet_host_create (const ENetAddress * address, size_t peerCount, size_t channelL
     return host;
 }
 
-/** Destroys the host and all resources associated with it.
+/** Destroys the host and all Resources associated with it.
     @param host pointer to the host to destroy
 */
 void

@@ -46,8 +46,8 @@ struct RenderResources
     WGPUTextureView     FontTextureView;        // Texture view for font texture
     WGPUSampler         Sampler;                // Sampler for the font texture
     WGPUBuffer          Uniforms;               // Shader uniforms
-    WGPUBindGroup       CommonBindGroup;        // Resources bind-group to bind the common resources to pipeline
-    ImGuiStorage        ImageBindGroups;        // Resources bind-group to bind the font/image resources to pipeline (this is a key->value map)
+    WGPUBindGroup       CommonBindGroup;        // Resources bind-group to bind the common Resources to pipeline
+    ImGuiStorage        ImageBindGroups;        // Resources bind-group to bind the font/image Resources to pipeline (this is a key->value map)
     WGPUBindGroup       ImageBindGroup;         // Default font-resource of Dear ImGui
     WGPUBindGroupLayout ImageBindGroupLayout;   // Cache layout used for the image bind group. Avoids allocating unnecessary JS objects when working with WebASM
 };

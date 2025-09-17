@@ -252,7 +252,7 @@ static GLFWbool supportsXInput(const GUID* guid)
     return result;
 }
 
-// Frees all resources associated with the specified joystick
+// Frees all Resources associated with the specified joystick
 //
 static void closeJoystick(_GLFWjoystick* js)
 {

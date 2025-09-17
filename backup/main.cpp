@@ -41,7 +41,7 @@ int main() {
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    Shader shader("../shaders/simple_shader.vert", "../shaders/simple_shader.frag");
+    Shader shader("../Shaders/simple_shader.vert", "../Shaders/simple_shader.frag");
 
 
     float vertices[] = {
@@ -93,7 +93,7 @@ int main() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    data = stbi_load("../resources/container.jpg", &width, &height, &nrChannels, 0);
+    data = stbi_load("../Resources/container.jpg", &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -111,7 +111,7 @@ int main() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     stbi_set_flip_vertically_on_load(true);
-    data = stbi_load("../resources/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("../Resources/awesomeface.png", &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -153,7 +153,7 @@ int main() {
         glfwPollEvents();
     }
 
-    //optional: de-allocate resources once they've outlived their purpose
+    //optional: de-allocate Resources once they've outlived their purpose
     glDeleteVertexArrays(1, &VAO[0]);
     glDeleteBuffers(1, &VBO[0]);
     glDeleteBuffers(1, &EBO[0]);

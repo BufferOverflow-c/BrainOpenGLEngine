@@ -32,7 +32,7 @@
 // Needed for _NSGetProgname
 #include <crt_externs.h>
 
-// Change to our application bundle's resources directory, if present
+// Change to our application bundle's Resources directory, if present
 //
 static void changeToResourcesDirectory(void)
 {

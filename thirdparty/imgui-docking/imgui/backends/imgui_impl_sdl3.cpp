@@ -62,7 +62,7 @@ struct ImGui_ImplSDL3_Data
 // Backend data stored in io.BackendPlatformUserData to allow support for multiple Dear ImGui contexts
 // It is STRONGLY preferred that you use docking branch with multi-viewports (== single Dear ImGui context + multiple windows) instead of multiple Dear ImGui contexts.
 // FIXME: multi-context support is not well tested and probably dysfunctional in this backend.
-// FIXME: some shared resources (mouse cursor shape, gamepad) are mishandled when using multi-context.
+// FIXME: some shared Resources (mouse cursor shape, gamepad) are mishandled when using multi-context.
 static ImGui_ImplSDL3_Data* ImGui_ImplSDL3_GetBackendData()
 {
     return ImGui::GetCurrentContext() ? (ImGui_ImplSDL3_Data*)ImGui::GetIO().BackendPlatformUserData : nullptr;
@@ -713,7 +713,7 @@ static void ImGui_ImplSDL3_CreateWindow(ImGuiViewport* viewport)
     ImGuiViewport* main_viewport = ImGui::GetMainViewport();
     ImGui_ImplSDL3_ViewportData* main_viewport_data = (ImGui_ImplSDL3_ViewportData*)main_viewport->PlatformUserData;
 
-    // Share GL resources with main context
+    // Share GL Resources with main context
     bool use_opengl = (main_viewport_data->GLContext != nullptr);
     SDL_GLContext backup_context = nullptr;
     if (use_opengl)

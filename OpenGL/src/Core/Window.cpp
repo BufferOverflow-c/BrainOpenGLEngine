@@ -1,11 +1,11 @@
-#include "brain_window.hpp"
+#include "Window.hpp"
 
 // STD
 #include <iostream>
 
-using namespace Brain;
+using namespace BrainOpenGL;
 
-BrainWindow::BrainWindow(int width, int height, std::string window_name) {
+BrainWindow::BrainWindow(const int width, const int height, std::string window_name) {
     initWindow();
     window = glfwCreateWindow(width, height, "Brain", nullptr, nullptr);
     if(window == nullptr) {
@@ -13,7 +13,7 @@ BrainWindow::BrainWindow(int width, int height, std::string window_name) {
         return;
     }
     glfwMakeContextCurrent(window);
-    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if(!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
         std::cerr << "Failed to initialize GLAD\n";
         return;
     }

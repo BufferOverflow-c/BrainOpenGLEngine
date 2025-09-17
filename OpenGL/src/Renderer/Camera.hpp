@@ -7,7 +7,7 @@
 
 #include "GLFW/glfw3.h"
 
-namespace Brain {
+namespace BrainOpenGL {
 
 enum Camera_Movements {
     FORWARD,
@@ -37,7 +37,6 @@ public:
     void processMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch = true);
     void processMouseScroll(float yOffset);
 
-
     // Camera attributes
     glm::vec3 position;
     glm::vec3 front;
@@ -51,7 +50,6 @@ public:
     float movementSpeed;
     float mouseSensitivity;
     float zoom;
-
 private:
     void updateCameraVectors();
 };

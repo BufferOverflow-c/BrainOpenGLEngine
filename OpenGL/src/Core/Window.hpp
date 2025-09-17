@@ -7,7 +7,7 @@
 // STD
 #include <string>
 
-namespace Brain {
+namespace BrainOpenGL {
 class BrainWindow {
 public:
     BrainWindow(int width, int height, std::string window_name);
@@ -17,9 +17,9 @@ public:
     BrainWindow(const BrainWindow &) = delete;
     BrainWindow &operator=(const BrainWindow &) = delete;
 
-    bool shouldClose() { return glfwWindowShouldClose(window); }
+    bool shouldClose() const { return glfwWindowShouldClose(window); }
 
-    GLFWwindow *getGLFWwindow() const { return window; }
+    [[nodiscard]] GLFWwindow *getGLFWwindow() const { return window; }
 
 private:
     static void framebuffer_size_callback(GLFWwindow *window, const int width, const int height);

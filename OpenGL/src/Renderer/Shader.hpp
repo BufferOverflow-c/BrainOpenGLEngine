@@ -10,7 +10,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace Brain {
+namespace BrainOpenGL {
 class Shader {
 public:
     // program ID

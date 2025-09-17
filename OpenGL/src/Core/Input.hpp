@@ -1,6 +1,6 @@
 #pragma once
 
-#include "brain_camera.hpp"
+#include "../Renderer/brain_camera.hpp"
 #include "brain_window.hpp"
 
 namespace Brain {
@@ -20,8 +20,7 @@ public:
         int lookDown = GLFW_KEY_DOWN;
         int escape = GLFW_KEY_ESCAPE;
       };
-      void processInput(GLFWwindow *window, float deltaTime);
-      //void moveInPlaneXZ(GLFWwindow *window, float dt, BrnGameObject &gameObject);
+      void processInput(GLFWwindow *window, BrainCamera &camera, const float deltaTime);
 
       KeyMappings keys{};
       float moveSpeed{3.f};

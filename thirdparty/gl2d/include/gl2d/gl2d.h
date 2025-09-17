@@ -11,7 +11,7 @@
 //		texture transparency
 //	draw text with font and shadows
 //	camera
-//	shaders
+//	Shaders
 //	setVsync
 //	texture atlases and loading textures with \
 //		padding to fix visual bugs when using \
@@ -313,7 +313,7 @@ namespace gl2d
 		void create(unsigned int w, unsigned int h);
 		void resize(unsigned int w, unsigned int h);
 
-		//clears resources
+		//clears Resources
 		void cleanup();
 
 		//clears colors
@@ -347,8 +347,8 @@ namespace gl2d
 		//If the capacity is exceded it will be extended but this will cost performance.
 		void create(GLuint fbo = 0, size_t quadCount = 1'000);
 
-		//Clears the object alocated resources but
-		//does not clear resources allocated by user like textures, fonts and fbos!
+		//Clears the object alocated Resources but
+		//does not clear Resources allocated by user like textures, fonts and fbos!
 		void cleanup();
 
 		GLuint defaultFBO = 0;
