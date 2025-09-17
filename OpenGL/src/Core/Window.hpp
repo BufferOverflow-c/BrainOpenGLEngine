@@ -10,8 +10,11 @@
 #include <string>
 
 namespace BrainOpenGL {
+<<<<<<< HEAD
     void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
     void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
+=======
+>>>>>>> camera
 class Window {
 public:
     Window(int width, int height, std::string window_name);
@@ -28,7 +31,10 @@ public:
 
 private:
     static void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+<<<<<<< HEAD
 
+=======
+>>>>>>> camera
     void initWindow();
 
     // Window parameters

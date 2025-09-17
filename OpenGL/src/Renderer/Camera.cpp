@@ -18,15 +18,24 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
     updateCameraVectors();
 }
 
+<<<<<<< HEAD
 void Camera::ProcessKeyboard(Camera_Movement direction, float deltaTime) {
     float velocity = MovementSpeed * deltaTime;
+=======
+void Camera::ProcessKeyboardInput(const Camera_Movement direction, const float deltaTime) {
+    const float velocity = MovementSpeed * deltaTime;
+>>>>>>> camera
     if (direction == FORWARD) Position += Front * velocity;
     if (direction == BACKWARD) Position -= Front * velocity;
     if (direction == LEFT) Position -= Right * velocity;
     if (direction == RIGHT) Position += Right * velocity;
 }
 
+<<<<<<< HEAD
 void Camera::ProcessMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch) {
+=======
+void Camera::ProcessMouseMovement(float xOffset, float yOffset, const GLboolean constrainPitch) {
+>>>>>>> camera
     xOffset *= MouseSensitivity;
     yOffset *= MouseSensitivity;
 
