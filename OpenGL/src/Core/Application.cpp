@@ -22,20 +22,6 @@ namespace BrainOpenGL {
     double lastY{HEIGHT / 2.0};
     bool firstMouse = true;
 
-<<<<<<< HEAD
-Application::Application() {
-    loadGameObjects();
-}
-
-void Application::run() {
-    Shader shader("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.vert", "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.frag");
-    glEnable(GL_DEPTH_TEST);
-
-    // frame timing
-    currentFrame = static_cast<float>(glfwGetTime());
-    deltaTime = currentFrame - lastFrame;
-    lastFrame = currentFrame;
-=======
     Application::Application() {
         loadGameObjects();
     }
@@ -43,7 +29,6 @@ void Application::run() {
     void Application::run() {
         Shader shader("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.vert", "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.frag");
         glEnable(GL_DEPTH_TEST);
->>>>>>> camera
 
 #pragma region vertex attributes
         float vertices[] = {
@@ -179,11 +164,6 @@ void Application::run() {
         shader.setInt("texture2", 1);
         shader.setFloat("textureOpacity", 0.2);
 #pragma endregion shader
-<<<<<<< HEAD
-    glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    while(!window.shouldClose()) {
-        processInput(deltaTime);
-=======
         glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
         glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
         glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -192,7 +172,6 @@ void Application::run() {
             currentFrame = static_cast<float>(glfwGetTime());
             deltaTime = currentFrame - lastFrame;
             lastFrame = currentFrame;
->>>>>>> camera
 
             controller.ProcessInput(window.getGLFWwindow(), camera, deltaTime);
 
@@ -261,27 +240,7 @@ void Application::run() {
         camera.ProcessMouseMovement(xOffset, yOffset);
     }
 
-<<<<<<< HEAD
-/*
-void Application::fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth) {
-    if(depth < 0) { return; }
-
-    // center
-    transMatrix = glm::translate(transMatrix, translate);   // move
-    transMatrix = glm::scale(transMatrix, glm::vec3(0.5f)); // scale
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transMatrix));
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-    --depth;
-    fibonacci(transformLoc, glm::vec3(0.f, 1.5f, 0.f), transMatrix, depth);     // top
-    fibonacci(transformLoc, glm::vec3(-1.f, -0.5f, 0.f), transMatrix, depth);   // left
-    transMatrix = glm::scale(transMatrix, glm::vec3(-1.f, 1.f, 1.f));           // flip matrix on x to reverse texture
-    fibonacci(transformLoc, glm::vec3(-1.f, -0.5f, 0.f), transMatrix, depth);   // right side
-}
-*/
-=======
     void scroll_callback(GLFWwindow* window, double xOffset, double yOffset) {
         camera.ProcessMouseScroll(static_cast<float>(yOffset));
     }
 }
->>>>>>> camera

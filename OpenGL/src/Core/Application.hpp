@@ -33,29 +33,14 @@ public:
 
     void run();
 
-<<<<<<< HEAD
-#pragma region variables
-    static constexpr int WIDTH{800};
-    static constexpr int HEIGHT{600};
-=======
 #pragma region timing variables
->>>>>>> camera
     float currentFrame{};
     float deltaTime{};
     float lastFrame{};
 #pragma endregion variables
 private:
-<<<<<<< HEAD
-
-
-    KeyMappings keys{};
-    void loadGameObjects();
-    void processInput(const float deltaTime);
-    //void fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth);
-=======
     KeyboardController controller{};
     void loadGameObjects();
->>>>>>> camera
     Window window{WIDTH, HEIGHT, "Brain Engine"};
 };
 }

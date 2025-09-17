@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../Renderer/Camera.hpp"
-
 // thirdparty
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -10,11 +8,7 @@
 #include <string>
 
 namespace BrainOpenGL {
-<<<<<<< HEAD
-    void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
-    void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
-=======
->>>>>>> camera
+
 class Window {
 public:
     Window(int width, int height, std::string window_name);
@@ -31,10 +25,7 @@ public:
 
 private:
     static void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-<<<<<<< HEAD
 
-=======
->>>>>>> camera
     void initWindow();
 
     // Window parameters
@@ -44,13 +35,5 @@ private:
 
     // Window
     GLFWwindow *window;
-
-    // Camera
-    Camera camera{glm::vec3(0.0f, 0.0f, 3.0f)};
-#pragma region camera variables
-    float lastX;
-    float lastY;
-    bool firstMouse = true;
-#pragma endregion
 };
 } // namespace Brain

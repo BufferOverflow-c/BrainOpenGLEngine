@@ -5,11 +5,7 @@
 
 using namespace BrainOpenGL;
 
-<<<<<<< HEAD
-Window::Window(const int width, const int height, std::string window_name) : lastX(width/2.f), lastY(height/2.f) {
-=======
 Window::Window(const int width, const int height, std::string window_name) {
->>>>>>> camera
     initWindow();
     window = glfwCreateWindow(width, height, "Brain", nullptr, nullptr);
     if(window == nullptr) {
@@ -22,8 +18,6 @@ Window::Window(const int width, const int height, std::string window_name) {
         return;
     }
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetCursorPosCallback(window, mouse_callback);
-    glfwSetScrollCallback(window, scroll_callback);
 }
 
 Window::~Window() {
@@ -35,31 +29,6 @@ void Window::framebuffer_size_callback(GLFWwindow *window, const int width, cons
     glViewport(0, 0, width, height);
 }
 
-<<<<<<< HEAD
-void Window::mouse_callback(GLFWwindow *window, const double xPosInput, const double yPosInput) {
-    const float xPos = static_cast<float>(xPosInput);
-    const float yPos = static_cast<float>(yPosInput);
-
-    if (firstMouse) {
-        lastX = xPos;
-        lastY = yPos;
-        firstMouse = false;
-    }
-
-    const float xOffset = xPos - lastX;
-    const float yOffset = lastY - yPos;
-    lastX = xPos;
-    lastY = yPos;
-
-    camera.ProcessMouseMovement(xOffset, yOffset);
-}
-
-void Window::scroll_callback(GLFWwindow *window, const double xOffset, const double yOffset) {
-    camera.ProcessMouseScroll(static_cast<float>(yOffset));
-}
-
-=======
->>>>>>> camera
 void Window::initWindow() {
     if(!glfwInit()) {
         std::cerr << "GLFW Initialization Failed\n";
