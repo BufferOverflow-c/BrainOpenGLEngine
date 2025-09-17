@@ -1,62 +1,58 @@
 #include "Camera.hpp"
-#include "../Core/Window.hpp"
 
 using namespace BrainOpenGL;
 
-BrainCamera::BrainCamera(GLFWwindow *window, glm::vec3 position, glm::vec3 up, float yaw, float pitch) : front(glm::vec3(0.f, 0.f, -1.f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), zoom(ZOOM) {
-    worldUp = up;
-    this->position = position;
-    this->yaw = yaw;
-    this->pitch = pitch;
+Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch) : Front(glm::vec3(0.f, 0.f, -1.f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
+    Position = position;
+    WorldUp = up;
+    Yaw = yaw;
+    Pitch = pitch;
     updateCameraVectors();
 }
 
-BrainCamera::BrainCamera(GLFWwindow *window, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : front(glm::vec3(0.f, 0.f, -1.f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), zoom(ZOOM) {
-    position = glm::vec3(posX, posY, posZ);
-    worldUp = glm::vec3(upX, upY, upZ);
-    this->yaw = yaw;
-    this->pitch = pitch;
+Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.f, 0.f, -1.f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
+    Position = glm::vec3(posX, posY, posZ);
+    WorldUp = glm::vec3(upX, upY, upZ);
+    Yaw = yaw;
+    Pitch = pitch;
     updateCameraVectors();
 }
 
-BrainCamera::~BrainCamera() = default;
-
-glm::mat4 BrainCamera::getViewMatrix() {
-    return glm::lookAt(position, position + front, up);
+void Camera::ProcessKeyboard(Camera_Movement direction, float deltaTime) {
+    float velocity = MovementSpeed * deltaTime;
+    if (direction == FORWARD) Position += Front * velocity;
+    if (direction == BACKWARD) Position -= Front * velocity;
+    if (direction == LEFT) Position -= Right * velocity;
+    if (direction == RIGHT) Position += Right * velocity;
 }
 
-void BrainCamera::processKeyboardInput(const Camera_Movements direction, const float deltaTime) {
-    const float velocity = movementSpeed * deltaTime;
-    if (direction == FORWARD) position += front * velocity;
-    if (direction == BACKWARD) position -= front * velocity;
-    if (direction == LEFT) position -= right * velocity;
-    if (direction == RIGHT) position += right * velocity;
-}
+void Camera::ProcessMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch) {
+    xOffset *= MouseSensitivity;
+    yOffset *= MouseSensitivity;
 
-void BrainCamera::processMouseMovement(float xOffset, float yOffset, const GLboolean constrainPitch) {
-    xOffset *= mouseSensitivity;
-    yOffset *= mouseSensitivity;
-    yaw += xOffset;
-    pitch += yOffset;
+    Yaw += xOffset;
+    Pitch += yOffset;
+
     if (constrainPitch) {
-        if (pitch > 89.0f) pitch = 89.0f;
-        if (pitch < -89.0f) pitch = -89.0f;
+        if (Pitch > 89) Pitch = 89;
+        if (Pitch < -89) Pitch = -89;
     }
+
     updateCameraVectors();
 }
 
-void BrainCamera::processMouseScroll(const float yOffset) {
-    zoom -= (float)yOffset;
-    if (zoom < 1.0f) zoom = 1.0f;
-    if (zoom > 45.0f) zoom = 45.0f;
+void Camera::ProcessMouseScroll(float yOffset) {
+    Zoom -= static_cast<float>(yOffset);
+    if (Zoom < 1.0f) Zoom = 1.0f;
+    if (Zoom > 45.0f) Zoom = 45.0f;
 }
 
-void BrainCamera::updateCameraVectors() {
-    glm::vec3 newFront;
-    newFront.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    newFront.y = sin(glm::radians(pitch));
-    newFront.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front = glm::normalize(newFront);
-    right = glm::normalize(glm::cross(front, worldUp));
-    up = glm::normalize(glm::cross(right, front));
+void Camera::updateCameraVectors() {
+    glm::vec3 front;
+    front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+    front.y = sin(glm::radians(Pitch));
+    front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+    Front = glm::normalize(front);
+    Right = glm::normalize(glm::cross(Front, WorldUp));
+    Up = glm::normalize(glm::cross(Right, Front));
 }

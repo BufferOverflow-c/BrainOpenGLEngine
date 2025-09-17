@@ -20,7 +20,7 @@ public:
         int lookDown = GLFW_KEY_DOWN;
         int escape = GLFW_KEY_ESCAPE;
       };
-      void processInput(GLFWwindow *window, BrainCamera &camera, const float deltaTime);
+      void processInput(GLFWwindow *window, const float deltaTime);
 
       KeyMappings keys{};
       float moveSpeed{3.f};

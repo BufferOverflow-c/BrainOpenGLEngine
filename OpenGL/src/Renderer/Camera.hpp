@@ -5,52 +5,50 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "GLFW/glfw3.h"
-
 namespace BrainOpenGL {
+    enum Camera_Movement {
+        FORWARD,
+        BACKWARD,
+        LEFT,
+        RIGHT
+    };
 
-enum Camera_Movements {
-    FORWARD,
-    BACKWARD,
-    LEFT,
-    RIGHT,
-};
+    const float YAW = -90.0f;
+    const float PITCH = 0.f;
+    const float SPEED = 2.5f;
+    const float SENSITIVITY = 0.1f;
+    const float ZOOM = 45.0f;
 
-// Default camera values
-constexpr float YAW = -90.f;
-constexpr float PITCH = 0.f;
-constexpr float SPEED = 2.5f;
-constexpr float SENSITIVITY = 0.1f;
-constexpr float ZOOM = 45.f;
+    class Camera {
+    public:
+        // camera attributes
+        glm::vec3 Position;
+        glm::vec3 Front;
+        glm::vec3 Up;
+        glm::vec3 Right;
+        glm::vec3 WorldUp;
+        // euler angles
+        float Yaw;
+        float Pitch;
+        // camera options
+        float MovementSpeed;
+        float MouseSensitivity;
+        float Zoom;
 
-class BrainCamera {
-public:
-    // vectors
-    BrainCamera(GLFWwindow *window = nullptr, glm::vec3 position = glm::vec3(0.f, 0.f, 0.f), glm::vec3 up = glm::vec3(0.f, 1.f, 0.f), float yaw = YAW, float pitch = PITCH);
-    // scalers
-    BrainCamera(GLFWwindow *window, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch);
-    ~BrainCamera();
+        // vectors
+        Camera(glm::vec3 position = glm::vec3(0.f, 0.f, 0.f), glm::vec3 up = glm::vec3(0.f, 1.f, 0.f), float yaw = YAW, float pitch = PITCH);
+        // scalers
+        Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch);
 
-    glm::mat4 getViewMatrix();
+        glm::mat4 GetViewMatrix() { return glm::lookAt(Position, Position + Front, Up); }
 
-    void processKeyboardInput(Camera_Movements direction, float deltaTime);
-    void processMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch = true);
-    void processMouseScroll(float yOffset);
+        void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+        void ProcessMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch = true);
+        void ProcessMouseScroll(float yOffset);
 
-    // Camera attributes
-    glm::vec3 position;
-    glm::vec3 front;
-    glm::vec3 up;
-    glm::vec3 right;
-    glm::vec3 worldUp;
-    // euler angles
-    float yaw;
-    float pitch;
-    // camera options
-    float movementSpeed;
-    float mouseSensitivity;
-    float zoom;
-private:
-    void updateCameraVectors();
-};
+    private:
+        void updateCameraVectors();
+    };
+
+
 }
