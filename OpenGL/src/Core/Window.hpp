@@ -23,11 +23,8 @@ public:
 
     [[nodiscard]] GLFWwindow *getGLFWwindow() const { return window; }
 
-
 private:
     static void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-    void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
-    void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
     void initWindow();
 
     // Window parameters
@@ -37,13 +34,5 @@ private:
 
     // Window
     GLFWwindow *window;
-
-    // Camera
-    Camera camera{glm::vec3(0.0f, 0.0f, 3.0f)};
-#pragma region camera variables
-    float lastX;
-    float lastY;
-    bool firstMouse = true;
-#pragma endregion
 };
 } // namespace Brain

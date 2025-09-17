@@ -40,9 +40,9 @@ namespace BrainOpenGL {
         // scalers
         Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch);
 
-        glm::mat4 GetViewMatrix() { return glm::lookAt(Position, Position + Front, Up); }
+        glm::mat4 GetViewMatrix() const { return glm::lookAt(Position, Position + Front, Up); }
 
-        void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+        void ProcessKeyboardInput(Camera_Movement direction, float deltaTime);
         void ProcessMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch = true);
         void ProcessMouseScroll(float yOffset);
 
