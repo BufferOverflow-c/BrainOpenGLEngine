@@ -1,14 +1,14 @@
-#include "../src/OpenGL/Core/engine.hpp"
+#include "Application.hpp"
 
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
 
 int main() {
-    Brain::Engine engine{};
+    BrainOpenGL::Application app{};
 
     try {
-        engine.run();
+        app.run();
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
         return EXIT_FAILURE;

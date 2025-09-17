@@ -1,4 +1,4 @@
-#include "OpenGL/Core/engine.hpp"
+#include "Application.hpp"
 #include "../Renderer/Shader.hpp"
 
 // thirdparty
@@ -16,17 +16,15 @@
 
 using namespace BrainOpenGL;
 
-Engine::Engine() {
-    lastX = WIDTH / 2.f;
-    static float lastY = HEIGHT / 2.f;
+Application::Application() {
     static bool firstMouse = true;
     loadGameObjects();
 }
 
-Engine::~Engine() = default;
+Application::~Application() = default;
 
-void Engine::run() {
-    Shader shader("../Shaders/simple_shader.vert", "../Shaders/simple_shader.frag");
+void Application::run() {
+    Shader shader("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.vert", "/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/src/Renderer/Shaders/simple_shader.frag");
     glEnable(GL_DEPTH_TEST);
 
     // frame timing
@@ -136,7 +134,7 @@ void Engine::run() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     stbi_set_flip_vertically_on_load(true);
-    data = stbi_load(std::filesystem::path("../Resources/container.jpg").c_str(), &width, &height, &nrChannels, 0);
+    data = stbi_load(std::filesystem::path("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/Resources/container.jpg").c_str(), &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -152,7 +150,7 @@ void Engine::run() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    data = stbi_load(std::filesystem::path("../Resources/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
+    data = stbi_load(std::filesystem::path("/Users/c2/Documents/PersonalProjects/BrainOpenGLEngine/OpenGL/Resources/awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
     if(data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -168,8 +166,8 @@ void Engine::run() {
     shader.setInt("texture2", 1);
     shader.setFloat("textureOpacity", 0.2);
 #pragma endregion shader
-    glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
-    glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
+    //glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
+    //glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
     glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     while(!window.shouldClose()) {
         processInput(deltaTime);
@@ -222,9 +220,9 @@ void Engine::run() {
     glDeleteBuffers(1, &EBO);
 }
 
-void Engine::loadGameObjects() {}
+void Application::loadGameObjects() {}
 
-void Engine::processInput(const float deltaTime) {
+void Application::processInput(const float deltaTime) {
     if(glfwGetKey(window.getGLFWwindow(), keys.escape) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window.getGLFWwindow(), true);
     }
@@ -234,29 +232,29 @@ void Engine::processInput(const float deltaTime) {
     if (glfwGetKey(window.getGLFWwindow(), keys.moveRight) == GLFW_PRESS) camera.processKeyboardInput(RIGHT, deltaTime);
 }
 
-void Engine::mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput) {
-    const float xPos = static_cast<float>(xPosInput);
-    const float yPos = static_cast<float>(yPosInput);
-
-    if (firstMouse) {
-        lastX = xPos;
-        lastY = yPos;
-        firstMouse = false;
-    }
-
-    const float xOffset = xPos - lastX;
-    const float yOffset = lastY - yPos;
-    lastX = xPos;
-    lastY = yPos;
-
-    camera.processMouseMovement(xOffset, yOffset);
-}
-
-void Engine::scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
-    camera.processMouseScroll(static_cast<float>(yOffset));
-}
+//void Application::mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput) {
+//    const float xPos = static_cast<float>(xPosInput);
+//    const float yPos = static_cast<float>(yPosInput);
+//
+//    if (firstMouse) {
+//        lastX = xPos;
+//        lastY = yPos;
+//        firstMouse = false;
+//    }
+//
+//    const float xOffset = xPos - lastX;
+//    const float yOffset = lastY - yPos;
+//    lastX = xPos;
+//    lastY = yPos;
+//
+//    camera.processMouseMovement(xOffset, yOffset);
+//}
+//
+//void Application::scroll_callback(GLFWwindow *window, double xOffset, double yOffset) {
+//    camera.processMouseScroll(static_cast<float>(yOffset));
+//}
 /*
-void Engine::fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth) {
+void Application::fibonacci(unsigned int transformLoc, glm::vec3 translate, glm::mat4 transMatrix, int depth) {
     if(depth < 0) { return; }
 
     // center

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../Renderer/brain_camera.hpp"
-#include "brain_window.hpp"
+#include "../Renderer/Camera.hpp"
+#include "Window.hpp"
 
-namespace Brain {
+namespace BrainOpenGL {
 class KeyboardController {
 
 public:

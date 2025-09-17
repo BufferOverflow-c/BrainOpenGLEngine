@@ -38,7 +38,7 @@ target_include_directories(glad PUBLIC
 )
 
 # Collect all source files
-file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "OpenGL/src/*.cpp")
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "OpenGL/src/*/*.cpp")
 
 # Create executable
 add_executable("${CMAKE_PROJECT_NAME}" ${MY_SOURCES})
@@ -58,7 +58,7 @@ else()
 endif()
 
 # Include directories for other libraries
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/*")
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glfw-3.3.2/include")
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking")
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/gl2d/include")
@@ -100,8 +100,8 @@ find_program(GLSL_VALIDATOR glslangValidator HINTS
 )
 
 file(GLOB_RECURSE GLSL_SOURCE_FILES
-  "OpenGL/Shaders/*.frag"
-  "OpenGL/Shaders/*.vert"
+  "OpenGL/src/Renderer/Shaders/*.frag"
+  "OpenGL/src/Renderer/Shaders/*.vert"
 )
 
 foreach(GLSL ${GLSL_SOURCE_FILES})

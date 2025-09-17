@@ -7,7 +7,7 @@
 #include <glm/glm.hpp>
 
 namespace BrainOpenGL {
-class Engine {
+class Application {
 public:
     struct KeyMappings {
         int moveLeft = GLFW_KEY_A;
@@ -23,24 +23,24 @@ public:
         int escape = GLFW_KEY_ESCAPE;
     };
 
-    Engine();
-    ~Engine();
+    Application();
+    ~Application();
 
     //~ Delete copy constructors
-    Engine(const Engine &) = delete;
-    Engine &operator=(const Engine &) = delete;
+    Application(const Application &) = delete;
+    Application &operator=(const Application &) = delete;
 
     void run();
 
     // callbacks
-    static void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
-    static void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
+    //static void mouse_callback(GLFWwindow *window, double xPosInput, double yPosInput);
+    //static void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
 
 #pragma region variables
     static constexpr int WIDTH{800};
     static constexpr int HEIGHT{600};
-    static float lastX;
-    static float lastY;
+    //static float lastX;
+    //static float lastY;
     static bool firstMouse;
     float currentFrame{};
     float deltaTime{};

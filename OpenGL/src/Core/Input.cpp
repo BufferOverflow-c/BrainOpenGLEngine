@@ -1,6 +1,6 @@
-#include "OpenGL/Core/keyboardcontroller.hpp"
+#include "Input.hpp"
 
-using namespace Brain;
+using namespace BrainOpenGL;
 
 void KeyboardController::processInput(GLFWwindow *window, BrainCamera &camera, const float deltaTime) {
     if(glfwGetKey(window, keys.escape) == GLFW_PRESS) {
