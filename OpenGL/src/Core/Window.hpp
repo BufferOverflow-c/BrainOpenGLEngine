@@ -1,8 +1,8 @@
 #pragma once
 
 // thirdparty
-#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 // STD
 #include <string>
@@ -11,29 +11,29 @@ namespace BrainOpenGL {
 
 class Window {
 public:
-    Window(int width, int height, std::string window_name);
-    ~Window();
+  Window(int width, int height, std::string window_name);
+  ~Window();
 
-    //~ Deleting the copy constructors to prevent mem leak
-    Window(const Window &) = delete;
-    Window &operator=(const Window &) = delete;
+  //~ Deleting the copy constructors to prevent mem leak
+  Window(const Window &)            = delete;
+  Window &operator=(const Window &) = delete;
 
-    bool shouldClose() const { return glfwWindowShouldClose(window); }
+  bool shouldClose() const { return glfwWindowShouldClose(window); }
 
-    [[nodiscard]] GLFWwindow *getGLFWwindow() const { return window; }
-
+  [[nodiscard]] GLFWwindow *getGLFWwindow() const { return window; }
 
 private:
-    static void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+  static void framebuffer_size_callback(GLFWwindow *window, int width,
+                                        int height);
 
-    void initWindow();
+  void initWindow();
 
-    // Window parameters
-    int width;
-    int height;
-    std::string windowName;
+  // Window parameters
+  int         width;
+  int         height;
+  std::string windowName;
 
-    // Window
-    GLFWwindow *window;
+  // Window
+  GLFWwindow *window;
 };
-} // namespace Brain
+} // namespace BrainOpenGL
