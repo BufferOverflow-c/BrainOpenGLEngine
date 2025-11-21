@@ -40,12 +40,16 @@ else()
 endif()
 
 # Add third-party libraries
-add_subdirectory(thirdparty/glfw-3.3.2)
-add_subdirectory(thirdparty/stb_image)
-add_subdirectory(thirdparty/stb_truetype)
-add_subdirectory(thirdparty/glm)
-add_subdirectory(thirdparty/imgui-docking)
-add_subdirectory(thirdparty/gl2d)
+add_subdirectory(thirdparty/glfw-3.3.2)			#window oppener
+add_subdirectory(thirdparty/stb_image)			#loading immaged
+add_subdirectory(thirdparty/stb_truetype)		#loading ttf files
+#add_subdirectory(thirdparty/enet-1.3.17)		#networking
+add_subdirectory(thirdparty/glm)				#math
+add_subdirectory(thirdparty/imgui-docking)		#ui
+add_subdirectory(thirdparty/safeSave)			#saving data, designed for gamedev. It also makes backups so the player won't loose saves.
+add_subdirectory(thirdparty/profilerLib)		#profiling, just a simpe library for measuring elapsed time
+add_subdirectory(thirdparty/gl2d)				#2D rendering library
+add_subdirectory(thirdparty/glui)				#ui library, usefull for making game menus
 
 # Add GLAD manually as static library
 add_library(glad STATIC
@@ -78,29 +82,34 @@ else()
 endif()
 
 # Include directories for other libraries
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/*")
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glfw-3.3.2/include")
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking")
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/gl2d/include")
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/stb_image/include/stb_image")
-
-# Link libraries, including GLAD
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE
-    glm
-    glfw
-    glad
-    stb_image
-    stb_truetype
-    imgui
+target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/*"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/gl2d/include/gl2d"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/include/glad"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/include/KHR"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glfw-3.3.2/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glm/glm"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glui/include/glui"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking/imgui"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/profilerLib/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/include/external"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/safeSave/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/stb_image/include/stb_image"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/stb_truetype/include/stb_truetype"
 )
 
 # macOS specific frameworks
 if(APPLE)
-    target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE
+    target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
+        glad stb_image stb_truetype gl2d raudio_c imgui safeSave profilerLib glui
         "-framework IOKit"
         "-framework Cocoa"
         "-framework OpenGL"
-        raudio_c
+    )
+else()
+    target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
+        glad stb_image stb_truetype gl2d raudio imgui safeSave profilerLib glui
     )
 endif()
 

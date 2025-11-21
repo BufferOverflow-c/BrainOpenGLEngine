@@ -57,8 +57,6 @@ build CMakeFiles/raudio_c.dir/thirdparty/raudio/src/raudio.c.o: C_COMPILER__raud
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
   OBJECT_DIR = CMakeFiles/raudio_c.dir
   OBJECT_FILE_DIR = CMakeFiles/raudio_c.dir/thirdparty/raudio/src
-  TARGET_COMPILE_PDB = CMakeFiles/raudio_c.dir/raudio_c.pdb
-  TARGET_PDB = libraudio_c.pdb
 
 
 # =============================================================================
@@ -75,9 +73,8 @@ build libraudio_c.a: C_STATIC_LIBRARY_LINKER__raudio_c_Debug CMakeFiles/raudio_c
   OBJECT_DIR = CMakeFiles/raudio_c.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/raudio_c.dir/raudio_c.pdb
   TARGET_FILE = libraudio_c.a
-  TARGET_PDB = libraudio_c.pdb
+  TARGET_PDB = raudio_c.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target glad
@@ -96,8 +93,6 @@ build CMakeFiles/glad.dir/thirdparty/glad/src/glad.c.o: C_COMPILER__glad_unscann
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = CMakeFiles/glad.dir
   OBJECT_FILE_DIR = CMakeFiles/glad.dir/thirdparty/glad/src
-  TARGET_COMPILE_PDB = CMakeFiles/glad.dir/glad.pdb
-  TARGET_PDB = libglad.pdb
 
 
 # =============================================================================
@@ -114,9 +109,8 @@ build libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug CMakeFiles/glad.dir/thirdpa
   OBJECT_DIR = CMakeFiles/glad.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/glad.dir/glad.pdb
   TARGET_FILE = libglad.a
-  TARGET_PDB = libglad.pdb
+  TARGET_PDB = glad.a.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Brain
@@ -125,73 +119,61 @@ build libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug CMakeFiles/glad.dir/thirdpa
 #############################################
 # Order-only phony target for Brain
 
-build cmake_object_order_depends_target_Brain: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw cmake_object_order_depends_target_imgui cmake_object_order_depends_target_raudio_c cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
+build cmake_object_order_depends_target_Brain: phony || cmake_object_order_depends_target_gl2d cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw cmake_object_order_depends_target_glui cmake_object_order_depends_target_imgui cmake_object_order_depends_target_raudio_c cmake_object_order_depends_target_safeSave cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
 
 build CMakeFiles/Brain.dir/OpenGL/src/Core/Application.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Core/Application.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Core/Application.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Core
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 build CMakeFiles/Brain.dir/OpenGL/src/Core/Input.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Core/Input.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Core/Input.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Core
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 build CMakeFiles/Brain.dir/OpenGL/src/Core/Window.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Core/Window.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Core/Window.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Core
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 build CMakeFiles/Brain.dir/OpenGL/src/Core/main.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Core/main.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Core/main.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Core
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 build CMakeFiles/Brain.dir/OpenGL/src/Renderer/Camera.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Renderer/Camera.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Renderer/Camera.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Renderer
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 build CMakeFiles/Brain.dir/OpenGL/src/Renderer/Shader.cpp.o: CXX_COMPILER__Brain_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/src/Renderer/Shader.cpp || cmake_object_order_depends_target_Brain
   CONFIG = Debug
   DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0 -DGLFW_INCLUDE_NONE=1 -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"OpenGL/Resources/\"
   DEP_FILE = CMakeFiles/Brain.dir/OpenGL/src/Renderer/Shader.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64
-  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include
+  INCLUDES = -I"/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/OpenGL/*" -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include/gl2d -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/glad -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include/KHR -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include/glui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/raudio/include/external -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include/stb_image -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include/stb_truetype -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles/Brain.dir
   OBJECT_FILE_DIR = CMakeFiles/Brain.dir/OpenGL/src/Renderer
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
 
 
 # =============================================================================
@@ -201,17 +183,16 @@ build CMakeFiles/Brain.dir/OpenGL/src/Renderer/Shader.cpp.o: CXX_COMPILER__Brain
 #############################################
 # Link the executable /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain
 
-build /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain: CXX_EXECUTABLE_LINKER__Brain_Debug CMakeFiles/Brain.dir/OpenGL/src/Core/Application.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/Input.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/Window.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/main.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Renderer/Camera.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Renderer/Shader.cpp.o | thirdparty/glfw-3.3.2/src/libglfw3.a libglad.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a thirdparty/imgui-docking/libimgui.a libraudio_c.a thirdparty/glfw-3.3.2/src/libglfw3.a libglad.a || libglad.a libraudio_c.a thirdparty/glfw-3.3.2/src/libglfw3.a thirdparty/imgui-docking/libimgui.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a
+build /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain: CXX_EXECUTABLE_LINKER__Brain_Debug CMakeFiles/Brain.dir/OpenGL/src/Core/Application.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/Input.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/Window.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Core/main.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Renderer/Camera.cpp.o CMakeFiles/Brain.dir/OpenGL/src/Renderer/Shader.cpp.o | thirdparty/glfw-3.3.2/src/libglfw3.a libglad.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a thirdparty/gl2d/libgl2d.a libraudio_c.a thirdparty/imgui-docking/libimgui.a thirdparty/safeSave/libsafeSave.a thirdparty/glui/libglui.a thirdparty/glfw-3.3.2/src/libglfw3.a thirdparty/gl2d/libgl2d.a libglad.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a || libglad.a libraudio_c.a thirdparty/gl2d/libgl2d.a thirdparty/glfw-3.3.2/src/libglfw3.a thirdparty/glui/libglui.a thirdparty/imgui-docking/libimgui.a thirdparty/safeSave/libsafeSave.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
-  LINK_LIBRARIES = thirdparty/glfw-3.3.2/src/libglfw3.a  libglad.a  thirdparty/stb_image/libstb_image.a  thirdparty/stb_truetype/libstb_truetype.a  thirdparty/imgui-docking/libimgui.a  -framework IOKit  -framework Cocoa  -framework OpenGL  libraudio_c.a  thirdparty/glfw-3.3.2/src/libglfw3.a  -framework IOKit  -framework Cocoa  -framework CoreFoundation  libglad.a
+  LINK_LIBRARIES = thirdparty/glfw-3.3.2/src/libglfw3.a  libglad.a  thirdparty/stb_image/libstb_image.a  thirdparty/stb_truetype/libstb_truetype.a  thirdparty/gl2d/libgl2d.a  libraudio_c.a  thirdparty/imgui-docking/libimgui.a  thirdparty/safeSave/libsafeSave.a  thirdparty/glui/libglui.a  -framework IOKit  -framework Cocoa  -framework OpenGL  thirdparty/glfw-3.3.2/src/libglfw3.a  -framework IOKit  -framework Cocoa  -framework CoreFoundation  thirdparty/gl2d/libgl2d.a  libglad.a  thirdparty/stb_image/libstb_image.a  thirdparty/stb_truetype/libstb_truetype.a
   OBJECT_DIR = CMakeFiles/Brain.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Brain.dir/
   TARGET_FILE = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain
-  TARGET_PDB = /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain.pdb
+  TARGET_PDB = Brain.dbg
 
 
 #############################################
@@ -300,8 +281,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glf
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/init.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -311,8 +290,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_u
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/input.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -322,8 +299,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/monitor.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -333,8 +308,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glf
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/vulkan.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -344,8 +317,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/window.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -355,8 +326,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/cocoa_init.m || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -366,8 +335,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -377,8 +344,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPIL
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -388,8 +353,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILE
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/cocoa_window.m || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -399,8 +362,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/cocoa_time.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -410,8 +371,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/posix_thread.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -421,8 +380,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/nsgl_context.m || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -432,8 +389,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/egl_context.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -443,8 +398,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER_
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/osmesa_context.c || cmake_object_order_depends_target_glfw
   CONFIG = Debug
@@ -454,8 +407,6 @@ build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPIL
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
 
 
 # =============================================================================
@@ -472,9 +423,8 @@ build thirdparty/glfw-3.3.2/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug 
   OBJECT_DIR = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/glfw.pdb
   TARGET_FILE = thirdparty/glfw-3.3.2/src/libglfw3.a
-  TARGET_PDB = thirdparty/glfw-3.3.2/src/libglfw3.pdb
+  TARGET_PDB = glfw3.a.dbg
 
 
 #############################################
@@ -522,8 +472,6 @@ build thirdparty/stb_image/CMakeFiles/stb_image.dir/src/stb_image.cpp.o: CXX_COM
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include
   OBJECT_DIR = thirdparty/stb_image/CMakeFiles/stb_image.dir
   OBJECT_FILE_DIR = thirdparty/stb_image/CMakeFiles/stb_image.dir/src
-  TARGET_COMPILE_PDB = thirdparty/stb_image/CMakeFiles/stb_image.dir/stb_image.pdb
-  TARGET_PDB = thirdparty/stb_image/libstb_image.pdb
 
 
 # =============================================================================
@@ -540,9 +488,8 @@ build thirdparty/stb_image/libstb_image.a: CXX_STATIC_LIBRARY_LINKER__stb_image_
   OBJECT_DIR = thirdparty/stb_image/CMakeFiles/stb_image.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = thirdparty/stb_image/CMakeFiles/stb_image.dir/stb_image.pdb
   TARGET_FILE = thirdparty/stb_image/libstb_image.a
-  TARGET_PDB = thirdparty/stb_image/libstb_image.pdb
+  TARGET_PDB = stb_image.a.dbg
 
 
 #############################################
@@ -590,8 +537,6 @@ build thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.o
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir
   OBJECT_FILE_DIR = thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src
-  TARGET_COMPILE_PDB = thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/stb_truetype.pdb
-  TARGET_PDB = thirdparty/stb_truetype/libstb_truetype.pdb
 
 
 # =============================================================================
@@ -608,9 +553,8 @@ build thirdparty/stb_truetype/libstb_truetype.a: CXX_STATIC_LIBRARY_LINKER__stb_
   OBJECT_DIR = thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/stb_truetype.pdb
   TARGET_FILE = thirdparty/stb_truetype/libstb_truetype.a
-  TARGET_PDB = thirdparty/stb_truetype/libstb_truetype.pdb
+  TARGET_PDB = stb_truetype.a.dbg
 
 
 #############################################
@@ -687,8 +631,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -698,8 +640,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.o: CXX_
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -709,8 +649,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.o: CXX_
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -720,8 +658,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.o: CX
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -731,8 +667,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.o: C
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/backends/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -742,8 +676,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_gl
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.o: CXX_COMPILER__imgui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui/backends/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
   CONFIG = Debug
@@ -753,8 +685,6 @@ build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_op
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/imgui -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
 
 
 # =============================================================================
@@ -771,9 +701,8 @@ build thirdparty/imgui-docking/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Debu
   OBJECT_DIR = thirdparty/imgui-docking/CMakeFiles/imgui.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui.pdb
   TARGET_FILE = thirdparty/imgui-docking/libimgui.a
-  TARGET_PDB = thirdparty/imgui-docking/libimgui.pdb
+  TARGET_PDB = imgui.a.dbg
 
 
 #############################################
@@ -805,6 +734,100 @@ build thirdparty/imgui-docking/rebuild_cache: phony thirdparty/imgui-docking/CMa
 # =============================================================================
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target safeSave
+
+
+#############################################
+# Order-only phony target for safeSave
+
+build cmake_object_order_depends_target_safeSave: phony || .
+
+build thirdparty/safeSave/CMakeFiles/safeSave.dir/src/safeSave.cpp.o: CXX_COMPILER__safeSave_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/src/safeSave.cpp || cmake_object_order_depends_target_safeSave
+  CONFIG = Debug
+  DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0
+  DEP_FILE = thirdparty/safeSave/CMakeFiles/safeSave.dir/src/safeSave.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64
+  INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/include
+  OBJECT_DIR = thirdparty/safeSave/CMakeFiles/safeSave.dir
+  OBJECT_FILE_DIR = thirdparty/safeSave/CMakeFiles/safeSave.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target safeSave
+
+
+#############################################
+# Link the static library thirdparty/safeSave/libsafeSave.a
+
+build thirdparty/safeSave/libsafeSave.a: CXX_STATIC_LIBRARY_LINKER__safeSave_Debug thirdparty/safeSave/CMakeFiles/safeSave.dir/src/safeSave.cpp.o
+  ARCH_FLAGS = -arch arm64
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = thirdparty/safeSave/CMakeFiles/safeSave.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = thirdparty/safeSave/libsafeSave.a
+  TARGET_PDB = safeSave.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build thirdparty/safeSave/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/safeSave && /opt/homebrew/bin/ccmake -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build thirdparty/safeSave/edit_cache: phony thirdparty/safeSave/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build thirdparty/safeSave/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/safeSave && /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build thirdparty/safeSave/rebuild_cache: phony thirdparty/safeSave/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build thirdparty/profilerLib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/profilerLib && /opt/homebrew/bin/ccmake -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build thirdparty/profilerLib/edit_cache: phony thirdparty/profilerLib/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build thirdparty/profilerLib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/profilerLib && /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build thirdparty/profilerLib/rebuild_cache: phony thirdparty/profilerLib/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
 # Object build statements for STATIC_LIBRARY target gl2d
 
 
@@ -821,8 +844,6 @@ build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2d.cpp.o: CXX_COMPILER__gl2d_uns
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty/gl2d/CMakeFiles/gl2d.dir
   OBJECT_FILE_DIR = thirdparty/gl2d/CMakeFiles/gl2d.dir/src
-  TARGET_COMPILE_PDB = thirdparty/gl2d/CMakeFiles/gl2d.dir/gl2d.pdb
-  TARGET_PDB = thirdparty/gl2d/libgl2d.pdb
 
 build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2dParticleSystem.cpp.o: CXX_COMPILER__gl2d_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/src/gl2dParticleSystem.cpp || cmake_object_order_depends_target_gl2d
   CONFIG = Debug
@@ -832,8 +853,6 @@ build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2dParticleSystem.cpp.o: CXX_COMP
   INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty/gl2d/CMakeFiles/gl2d.dir
   OBJECT_FILE_DIR = thirdparty/gl2d/CMakeFiles/gl2d.dir/src
-  TARGET_COMPILE_PDB = thirdparty/gl2d/CMakeFiles/gl2d.dir/gl2d.pdb
-  TARGET_PDB = thirdparty/gl2d/libgl2d.pdb
 
 
 # =============================================================================
@@ -850,9 +869,8 @@ build thirdparty/gl2d/libgl2d.a: CXX_STATIC_LIBRARY_LINKER__gl2d_Debug thirdpart
   OBJECT_DIR = thirdparty/gl2d/CMakeFiles/gl2d.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = thirdparty/gl2d/CMakeFiles/gl2d.dir/gl2d.pdb
   TARGET_FILE = thirdparty/gl2d/libgl2d.a
-  TARGET_PDB = thirdparty/gl2d/libgl2d.pdb
+  TARGET_PDB = gl2d.a.dbg
 
 
 #############################################
@@ -879,6 +897,71 @@ build thirdparty/gl2d/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build thirdparty/gl2d/rebuild_cache: phony thirdparty/gl2d/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glui
+
+
+#############################################
+# Order-only phony target for glui
+
+build cmake_object_order_depends_target_glui: phony || cmake_object_order_depends_target_gl2d cmake_object_order_depends_target_glad cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
+
+build thirdparty/glui/CMakeFiles/glui.dir/src/glui.cpp.o: CXX_COMPILER__glui_unscanned_Debug /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/src/glui.cpp || cmake_object_order_depends_target_glui
+  CONFIG = Debug
+  DEFINES = -DGL2D_FORCE_CORE_PROFILE=1 -DGL2D_USE_LEGACY=0 -DGL2D_USE_SIMD=0
+  DEP_FILE = thirdparty/glui/CMakeFiles/glui.dir/src/glui.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64
+  INCLUDES = -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glad/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/include -I/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/include
+  OBJECT_DIR = thirdparty/glui/CMakeFiles/glui.dir
+  OBJECT_FILE_DIR = thirdparty/glui/CMakeFiles/glui.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glui
+
+
+#############################################
+# Link the static library thirdparty/glui/libglui.a
+
+build thirdparty/glui/libglui.a: CXX_STATIC_LIBRARY_LINKER__glui_Debug thirdparty/glui/CMakeFiles/glui.dir/src/glui.cpp.o || libglad.a thirdparty/gl2d/libgl2d.a thirdparty/stb_image/libstb_image.a thirdparty/stb_truetype/libstb_truetype.a
+  ARCH_FLAGS = -arch arm64
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = thirdparty/glui/CMakeFiles/glui.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = thirdparty/glui/libglui.a
+  TARGET_PDB = glui.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build thirdparty/glui/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glui && /opt/homebrew/bin/ccmake -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build thirdparty/glui/edit_cache: phony thirdparty/glui/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build thirdparty/glui/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glui && /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine -B/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build thirdparty/glui/rebuild_cache: phony thirdparty/glui/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build Brain: phony /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain
@@ -889,19 +972,27 @@ build glad: phony libglad.a
 
 build glfw: phony thirdparty/glfw-3.3.2/src/libglfw3.a
 
+build glui: phony thirdparty/glui/libglui.a
+
 build imgui: phony thirdparty/imgui-docking/libimgui.a
 
 build libgl2d.a: phony thirdparty/gl2d/libgl2d.a
 
 build libglfw3.a: phony thirdparty/glfw-3.3.2/src/libglfw3.a
 
+build libglui.a: phony thirdparty/glui/libglui.a
+
 build libimgui.a: phony thirdparty/imgui-docking/libimgui.a
+
+build libsafeSave.a: phony thirdparty/safeSave/libsafeSave.a
 
 build libstb_image.a: phony thirdparty/stb_image/libstb_image.a
 
 build libstb_truetype.a: phony thirdparty/stb_truetype/libstb_truetype.a
 
 build raudio_c: phony libraudio_c.a
+
+build safeSave: phony thirdparty/safeSave/libsafeSave.a
 
 build stb_image: phony thirdparty/stb_image/libstb_image.a
 
@@ -915,7 +1006,7 @@ build stb_truetype: phony thirdparty/stb_truetype/libstb_truetype.a
 #############################################
 # Folder: /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug
 
-build all: phony libraudio_c.a libglad.a /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain thirdparty/glfw-3.3.2/all thirdparty/stb_image/all thirdparty/stb_truetype/all thirdparty/glm/all thirdparty/imgui-docking/all thirdparty/gl2d/all
+build all: phony libraudio_c.a libglad.a /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/Brain thirdparty/glfw-3.3.2/all thirdparty/stb_image/all thirdparty/stb_truetype/all thirdparty/glm/all thirdparty/imgui-docking/all thirdparty/safeSave/all thirdparty/profilerLib/all thirdparty/gl2d/all thirdparty/glui/all
 
 # =============================================================================
 
@@ -948,9 +1039,30 @@ build thirdparty/glm/all: phony
 # =============================================================================
 
 #############################################
+# Folder: /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glui
+
+build thirdparty/glui/all: phony thirdparty/glui/libglui.a
+
+# =============================================================================
+
+#############################################
 # Folder: /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking
 
 build thirdparty/imgui-docking/all: phony thirdparty/imgui-docking/libimgui.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/profilerLib
+
+build thirdparty/profilerLib/all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/safeSave
+
+build thirdparty/safeSave/all: phony thirdparty/safeSave/libsafeSave.a
 
 # =============================================================================
 
@@ -987,14 +1099,14 @@ build /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-deb
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_image/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glm/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake: RERUN_CMAKE /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/cmake.verify_globs | /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3.pc.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw_config.h.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/CMakeLists.txt /opt/homebrew/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Diab-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindThreads.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCLinker.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake
+build build.ninja /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glfw-3.3.2/src/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_image/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glm/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/safeSave/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/profilerLib/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glui/cmake_install.cmake: RERUN_CMAKE /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/cmake.verify_globs | /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3.pc.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw_config.h.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/CMakeLists.txt /opt/homebrew/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindThreads.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3.pc.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw_config.h.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/CMakeLists.txt /opt/homebrew/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake /opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Diab-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindThreads.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCLinker.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake: phony
+build /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3.pc.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glfw-3.3.2/src/glfw_config.h.in /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glm/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/glui/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/imgui-docking/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/profilerLib/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/safeSave/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_image/CMakeLists.txt /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/stb_truetype/CMakeLists.txt /opt/homebrew/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindThreads.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake: phony
 
 
 #############################################
