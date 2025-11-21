@@ -21,14 +21,6 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 
-if (CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
-    add_compile_definitions(GL2D_USE_SIMD=0) # Disables SIMD for ARM
-    if (APPLE)
-        add_compile_definitions(GL2D_USE_SIMD=0)
-        add_compile_definitions(GL2D_USE_LEGACY=0)
-        add_compile_definitions(GL2D_FORCE_CORE_PROFILE=1)
-    endif()
-endif()
 
 if (APPLE)
     add_library(raudio_c STATIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/src/raudio.c")
@@ -99,18 +91,29 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/stb_truetype/include/stb_truetype"
 )
 
-# macOS specific frameworks
-if(APPLE)
-    target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
-        glad stb_image stb_truetype gl2d raudio_c imgui safeSave profilerLib glui
-        "-framework IOKit"
-        "-framework Cocoa"
-        "-framework OpenGL"
-    )
-else()
-    target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
-        glad stb_image stb_truetype gl2d raudio imgui safeSave profilerLib glui
-    )
+if (CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
+    add_compile_definitions(GL2D_USE_SIMD=0) # Disables SIMD for ARM
+    if(APPLE)
+        target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
+            glad stb_image stb_truetype gl2d raudio_c imgui safeSave profilerLib glui
+            "-framework IOKit"
+            "-framework Cocoa"
+            "-framework OpenGL"
+        )
+        target_compile_definitions("${CMAKE_PROJECT_NAME}" PRIVATE
+            GL2D_USE_SIMD=0
+            GL2D_USE_LEGACY=0
+            GL2D_FORCE_CORE_PROFILE=1
+            GL2D_USE_PACKED_VERTICES=0
+        )
+    else()
+        target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw
+            glad stb_image stb_truetype gl2d raudio imgui safeSave profilerLib glui
+        )
+        target_compile_definitions("${CMAKE_PROJECT_NAME}" PRIVATE
+            GL2D_USE_SIMD=0
+        )
+    endif()
 endif()
 
 # MSVC specific options
