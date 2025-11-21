@@ -1,7 +1,8 @@
-/out
-bin/
+.cache
+.idea
+.clang-format
+.clangd
+compile_commands.json
+
 build/
-/.vs
-.idea/
-CMakeSettings.json
-Makefile
+cmake-build-debug/

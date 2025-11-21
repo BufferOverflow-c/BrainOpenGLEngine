@@ -75,7 +75,9 @@ endif()
 
 # Include directories for other libraries
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC
-    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/*"
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/include/Core"
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/include/Renderer"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/gl2d/include/gl2d"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/include/glad"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/include/KHR"
@@ -133,8 +135,8 @@ find_program(GLSL_VALIDATOR glslangValidator HINTS
 )
 
 file(GLOB_RECURSE GLSL_SOURCE_FILES
-  "OpenGL/src/Renderer/Shaders/*.frag"
-  "OpenGL/src/Renderer/Shaders/*.vert"
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/src/Renderer/Shaders/*.frag"
+    "${CMAKE_CURRENT_SOURCE_DIR}/OpenGL/src/Renderer/Shaders/*.vert"
 )
 
 foreach(GLSL ${GLSL_SOURCE_FILES})
