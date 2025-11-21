@@ -85,6 +85,7 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glm/glm"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glui/include/glui"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking/imgui"
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking/imgui/backends"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/profilerLib/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/include/external"

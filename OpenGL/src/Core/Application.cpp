@@ -1,5 +1,8 @@
 #include "Application.hpp"
 #include "../Renderer/Shader.hpp"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
 // thirdparty
 #include <GLFW/glfw3.h>
@@ -56,12 +59,16 @@ void Application::run() {
       -0.5f, 0.5f,  0.5f,  0.0f, 0.0f, -0.5f, 0.5f,  -0.5f, 0.0f, 1.0f};
 
   // world space positions of our cubes
-  glm::vec3 cubePositions[] = {
-      glm::vec3(0.0f, 0.0f, 0.0f),    glm::vec3(2.0f, 5.0f, -15.0f),
-      glm::vec3(-1.5f, -2.2f, -2.5f), glm::vec3(-3.8f, -2.0f, -12.3f),
-      glm::vec3(2.4f, -0.4f, -3.5f),  glm::vec3(-1.7f, 3.0f, -7.5f),
-      glm::vec3(1.3f, -2.0f, -2.5f),  glm::vec3(1.5f, 2.0f, -2.5f),
-      glm::vec3(1.5f, 0.2f, -1.5f),   glm::vec3(-1.3f, 1.0f, -1.5f)};
+  glm::vec3 cubePositions[] = {glm::vec3(0.0f, 0.0f, 0.0f),
+                               glm::vec3(2.0f, 5.0f, -15.0f),
+                               glm::vec3(-1.5f, -2.2f, -2.5f),
+                               glm::vec3(-3.8f, -2.0f, -12.3f),
+                               glm::vec3(2.4f, -0.4f, -3.5f),
+                               glm::vec3(-1.7f, 3.0f, -7.5f),
+                               glm::vec3(1.3f, -2.0f, -2.5f),
+                               glm::vec3(1.5f, 2.0f, -2.5f),
+                               glm::vec3(1.5f, 0.2f, -1.5f),
+                               glm::vec3(-1.3f, 1.0f, -1.5f)};
 
   unsigned int indices[] = {
       // note start at 0
@@ -82,18 +89,18 @@ void Application::run() {
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
   // copy our Indices array in a element buffer for OpenGL
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices,
-               GL_STATIC_DRAW);
+  glBufferData(
+      GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
   // positions
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
   glEnableVertexAttribArray(0);
   // colors
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float),
-                        (void *)(3 * sizeof(float)));
+  glVertexAttribPointer(
+      1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
   // textures
-  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float),
-                        (void *)(3 * sizeof(float)));
+  glVertexAttribPointer(
+      2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
   glEnableVertexAttribArray(2);
   // wireframes
   // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -114,10 +121,20 @@ void Application::run() {
   stbi_set_flip_vertically_on_load(true);
   data =
       stbi_load(std::filesystem::path("OpenGL/Resources/container.jpg").c_str(),
-                &width, &height, &nrChannels, 0);
+                &width,
+                &height,
+                &nrChannels,
+                0);
   if (data) {
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
-                 GL_UNSIGNED_BYTE, data);
+    glTexImage2D(GL_TEXTURE_2D,
+                 0,
+                 GL_RGB,
+                 width,
+                 height,
+                 0,
+                 GL_RGB,
+                 GL_UNSIGNED_BYTE,
+                 data);
     glGenerateMipmap(GL_TEXTURE_2D);
   } else {
     std::println("Failed to load texture\n");
@@ -132,11 +149,21 @@ void Application::run() {
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
   data = stbi_load(
-      std::filesystem::path("OpenGL/Resources/awesomeface.png").c_str(), &width,
-      &height, &nrChannels, 0);
+      std::filesystem::path("OpenGL/Resources/awesomeface.png").c_str(),
+      &width,
+      &height,
+      &nrChannels,
+      0);
   if (data) {
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA,
-                 GL_UNSIGNED_BYTE, data);
+    glTexImage2D(GL_TEXTURE_2D,
+                 0,
+                 GL_RGB,
+                 width,
+                 height,
+                 0,
+                 GL_RGBA,
+                 GL_UNSIGNED_BYTE,
+                 data);
     glGenerateMipmap(GL_TEXTURE_2D);
   } else {
     std::println("Failed to load texture\n");
@@ -153,6 +180,7 @@ void Application::run() {
   glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
   glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
   glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
   while (!window.shouldClose()) {
     // frame timing
     currentFrame = static_cast<float>(glfwGetTime());
@@ -175,9 +203,11 @@ void Application::run() {
     shader.use();
 
     // pass projection matrix to shader
-    glm::mat4 projection = glm::perspective(
-        glm::radians(camera.Zoom),
-        static_cast<float>(WIDTH) / static_cast<float>(HEIGHT), 0.1f, 100.f);
+    glm::mat4 projection =
+        glm::perspective(glm::radians(camera.Zoom),
+                         static_cast<float>(WIDTH) / static_cast<float>(HEIGHT),
+                         0.1f,
+                         100.f);
     shader.setMat4("projection", projection);
 
     // camera/view transformation
