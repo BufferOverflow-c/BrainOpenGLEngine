@@ -1,3 +1,4 @@
+/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/raudio_c.dir
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/glad.dir
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/Brain.dir
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/CMakeFiles/Shaders.dir
@@ -19,3 +20,6 @@
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/CMakeFiles/imgui.dir
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/CMakeFiles/edit_cache.dir
 /Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/CMakeFiles/rebuild_cache.dir
+/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/CMakeFiles/gl2d.dir
+/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/CMakeFiles/edit_cache.dir
+/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/CMakeFiles/rebuild_cache.dir

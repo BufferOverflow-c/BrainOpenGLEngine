@@ -44,6 +44,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake")
   include("/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/glm/cmake_install.cmake")
   include("/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake")
+  include("/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake")
 
 endif()
 

@@ -324,6 +324,18 @@ GLSL_VALIDATOR:FILEPATH=/usr/local/bin/glslangValidator
 //Make this a production build
 PRODUCTION_BUILD:BOOL=OFF
 
+//Value Computed by CMake
+gl2d_BINARY_DIR:STATIC=/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/cmake-build-debug/thirdparty/gl2d
+
+//Value Computed by CMake
+gl2d_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+gl2d_LIB_DEPENDS:STATIC=general;glad;general;stb_image;general;stb_truetype;
+
+//Value Computed by CMake
+gl2d_SOURCE_DIR:STATIC=/Users/c2/Documents/PersonalProjects/cpp/BrainOpenGLEngine/thirdparty/gl2d
+
 //Dependencies for the target
 glfw_LIB_DEPENDS:STATIC=general;-framework Cocoa;general;-framework IOKit;general;-framework CoreFoundation;
 
@@ -497,7 +509,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

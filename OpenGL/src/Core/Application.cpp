@@ -11,6 +11,9 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+#include <print>
+#include <filesystem>
+
 namespace BrainOpenGL {
 Camera    camera{glm::vec3{0.f, 0.f, 3.f}};
 const int WIDTH{800};

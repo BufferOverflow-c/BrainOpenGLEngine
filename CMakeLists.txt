@@ -21,22 +21,40 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 
+if (CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
+    add_compile_definitions(GL2D_USE_SIMD=0) # Disables SIMD for ARM
+    if (APPLE)
+        add_compile_definitions(GL2D_USE_SIMD=0)
+        add_compile_definitions(GL2D_USE_LEGACY=0)
+        add_compile_definitions(GL2D_FORCE_CORE_PROFILE=1)
+    endif()
+endif()
+
+if (APPLE)
+    add_library(raudio_c STATIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/src/raudio.c")
+    target_include_directories(raudio_c PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/raudio/include")
+    set_target_properties(raudio_c PROPERTIES LINKER_LANGUAGE C)
+    target_compile_options(raudio_c PRIVATE -std=c11)
+else()
+    add_subdirectory(thirdparty/raudio)				#audio
+endif()
+
 # Add third-party libraries
 add_subdirectory(thirdparty/glfw-3.3.2)
 add_subdirectory(thirdparty/stb_image)
 add_subdirectory(thirdparty/stb_truetype)
 add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/imgui-docking)
-#add_subdirectory(thirdparty/gl2d)
+add_subdirectory(thirdparty/gl2d)
 
 # Add GLAD manually as static library
 add_library(glad STATIC
-    thirdparty/glad/src/glad.c  # Ensure this path is correct
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/src/glad.c  # Ensure this path is correct
 )
 
 # Include directories for GLAD
 target_include_directories(glad PUBLIC
-    thirdparty/glad/include   # Ensure this path is correct
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad/include   # Ensure this path is correct
 )
 
 # Collect all source files
@@ -82,6 +100,7 @@ if(APPLE)
         "-framework IOKit"
         "-framework Cocoa"
         "-framework OpenGL"
+        raudio_c
     )
 endif()
 
