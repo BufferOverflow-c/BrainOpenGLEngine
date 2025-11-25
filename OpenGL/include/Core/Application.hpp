@@ -39,8 +39,8 @@ public:
   float lastFrame{};
 #pragma endregion variables
 private:
-  KeyboardController controller{};
+  KeyboardController m_controller{};
   void               loadGameObjects();
-  Window             window{WIDTH, HEIGHT, "Brain Engine"};
+  Window             m_window{WIDTH, HEIGHT, "Brain Engine"};
 };
 } // namespace BrainOpenGL

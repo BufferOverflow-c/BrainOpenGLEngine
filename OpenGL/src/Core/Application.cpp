@@ -1,8 +1,5 @@
 #include "Application.hpp"
 #include "../Renderer/Shader.hpp"
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
 
 // thirdparty
 #include <GLFW/glfw3.h>
@@ -177,17 +174,17 @@ void Application::run() {
   shader.setInt("texture2", 1);
   shader.setFloat("textureOpacity", 0.2);
 #pragma endregion shader
-  glfwSetCursorPosCallback(window.getGLFWwindow(), mouse_callback);
-  glfwSetScrollCallback(window.getGLFWwindow(), scroll_callback);
-  glfwSetInputMode(window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+  glfwSetCursorPosCallback(m_window.getGLFWwindow(), mouse_callback);
+  glfwSetScrollCallback(m_window.getGLFWwindow(), scroll_callback);
+  glfwSetInputMode(m_window.getGLFWwindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-  while (!window.shouldClose()) {
+  while (!m_window.shouldClose()) {
     // frame timing
     currentFrame = static_cast<float>(glfwGetTime());
     deltaTime    = currentFrame - lastFrame;
     lastFrame    = currentFrame;
 
-    controller.ProcessInput(window.getGLFWwindow(), camera, deltaTime);
+    m_controller.ProcessInput(m_window.getGLFWwindow(), camera, deltaTime);
 
     // render
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -204,7 +201,7 @@ void Application::run() {
 
     // pass projection matrix to shader
     glm::mat4 projection =
-        glm::perspective(glm::radians(camera.Zoom),
+        glm::perspective(glm::radians(camera.m_zoom),
                          static_cast<float>(WIDTH) / static_cast<float>(HEIGHT),
                          0.1f,
                          100.f);
@@ -228,7 +225,7 @@ void Application::run() {
     }
 
     // swap buffers and poll IO events
-    glfwSwapBuffers(window.getGLFWwindow());
+    glfwSwapBuffers(m_window.getGLFWwindow());
     glfwPollEvents();
   }
 

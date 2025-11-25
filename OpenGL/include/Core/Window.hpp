@@ -18,9 +18,9 @@ public:
   Window(const Window &)            = delete;
   Window &operator=(const Window &) = delete;
 
-  bool shouldClose() const { return glfwWindowShouldClose(window); }
+  bool shouldClose() const { return glfwWindowShouldClose(p_window); }
 
-  [[nodiscard]] GLFWwindow *getGLFWwindow() const { return window; }
+  [[nodiscard]] GLFWwindow *getGLFWwindow() const { return p_window; }
 
 private:
   static void framebuffer_size_callback(GLFWwindow *window, int width,
@@ -29,11 +29,11 @@ private:
   void initWindow();
 
   // Window parameters
-  int         width;
-  int         height;
-  std::string windowName;
+  int         m_width;
+  int         m_height;
+  std::string m_windowName;
 
   // Window
-  GLFWwindow *window;
+  GLFWwindow *p_window;
 };
 } // namespace BrainOpenGL

@@ -25,8 +25,8 @@ public:
   ~KeyboardController() = default;
   void ProcessInput(GLFWwindow *window, Camera &camera, const float deltaTime);
 
-  KeyMappings keys{};
-  float       moveSpeed{3.f};
-  float       lookSpeed{1.5f};
+  KeyMappings m_keys{};
+  float       m_moveSpeed{3.f};
+  float       m_lookSpeed{1.5f};
 };
 } // namespace BrainOpenGL

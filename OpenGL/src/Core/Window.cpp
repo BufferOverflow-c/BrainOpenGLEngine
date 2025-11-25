@@ -7,21 +7,21 @@ using namespace BrainOpenGL;
 
 Window::Window(const int width, const int height, std::string window_name) {
   initWindow();
-  window = glfwCreateWindow(width, height, "Brain", nullptr, nullptr);
-  if (window == nullptr) {
+  p_window = glfwCreateWindow(width, height, "Brain", nullptr, nullptr);
+  if (p_window == nullptr) {
     std::cerr << "Failed to Create Window\n";
     return;
   }
-  glfwMakeContextCurrent(window);
+  glfwMakeContextCurrent(p_window);
   if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
     std::cerr << "Failed to initialize GLAD\n";
     return;
   }
-  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+  glfwSetFramebufferSizeCallback(p_window, framebuffer_size_callback);
 }
 
 Window::~Window() {
-  glfwDestroyWindow(window);
+  glfwDestroyWindow(p_window);
   glfwTerminate();
 }
 
